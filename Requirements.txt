@@ -1,0 +1,41 @@
+Requirements:
+Pet Web Service. The user is able to do the following action with pet:
+Add
+Update
+Get pet
+Delete pet
+
+[Id]: not mandatory, min length: 0, integer, should be unique
+[CategoryId]: not mandatory, min length: 0, integer, should be unique
+[CategoryName]: not mandatory, min length: 0, max length: 255, string
+[Name]: mandatory, min length: 1, max length: 25, string
+[PhotoUrls]: not mandatory, min length: 0, max length: 230, string
+[TagId]: not mandatory, min length: 0, integer, should be unique
+[TagName]: not mandatory, min length: 0, max length: 255, string
+[Status]: mandatory, avaliable/unavaliable
+
+Create checklist for testing the following method of the web service:
+1. POST (Add a new pet to the store): https://petstore.swagger.io/v2/pet
+body example: {
+  "id": 0,
+  "category": {
+    "id": 0,
+    "name": "string"
+  },
+  "name": "doggie",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "string"
+    }
+  ],
+  "status": "available"
+}
+2. POST (Updates a pet in the store with form-data): https://petstore.swagger.io/v2/pet/{pet_id}
+form-data: name
+form-data: status
+3. GET (Find a pet by Id): https://petstore.swagger.io/v2/pet/{pet_id}
+4. DELETE (Delete a pet): https://petstore.swagger.io/v2/pet/{petId}
